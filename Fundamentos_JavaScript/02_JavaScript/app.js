@@ -282,4 +282,122 @@ const   numero21 = "50",
 
 console.log(numero21 + numero22);
 
-console.log(numero21 + numero22);
+console.log(Number(numero21) + numero22);
+
+console.log(parseInt(numero21) + numero22);
+
+console.log(numero21 - numero22);
+
+console.log(typeof numero21);
+
+console.log(typeof numero23);
+
+console.log(typeof Number(numero23));
+console.log(Number(numero23));
+
+let dato;
+
+dato = Number("20");
+console.log(dato);
+
+dato = Number("20.10931");
+console.log(dato);
+
+dato = Number(true);
+console.log(dato);
+
+dato = Number(false);
+console.log(dato);
+
+dato = Number(null);
+console.log(dato);
+
+dato = Number(undefined);
+console.log(dato);
+
+dato = Number("Hola Mundo");
+console.log(dato);
+
+dato = Number([1,2,3,4,5]);
+console.log(dato);
+
+dato = parseInt(100);
+console.log(dato);
+
+dato = parseFloat(100);
+console.log(dato);
+
+dato = parseFloat(100.2030);
+console.log(dato);
+
+dato = parseInt(100.2030);
+console.log(dato);
+
+dato = 189.32039483240;
+console.log( dato.toFixed(6) );
+
+console.log(parseInt(dato).toFixed(2));
+
+console.log(parseFloat(dato).toFixed(2));
+
+//Numero a String
+let cp = 90210
+
+console.log(typeof cp);
+
+cp = String(cp);
+console.log(cp.length);
+
+dato = 4+4;
+console.log(dato);
+
+dato = '4' + '4';
+console.log(dato.length);
+
+dato = true;
+console.log(dato);
+
+dato = String(dato);
+console.log(typeof dato);
+console.log(dato.length);
+
+dato = 20;
+console.log(dato.toString());
+
+//dato = null;
+//console.log(dato.toString());
+
+
+//Template literals
+const   producto1   = 'Pizza',
+        precio1     = 30,
+        producto2   = 'Hamburguesa',
+        precio2     = 40;
+
+let html;
+// html =  '<ul>' +
+//         '<li>Orden:' + producto1 + '</li>' +
+//         '<li>Precio:' + precio1 + '</li>' +
+//         '<li>Orden:' + producto2 + '</li>' +
+//         '<li>Precio:' + precio2 + '</li>' +
+//         '<li>Total:' + (precio2 + precio2) + '</li>' +
+//         '</ul>';
+// console.log(html);
+
+// document.getElementById('app').innerHTML = html;
+
+html = `
+        <ul>
+            <li>Orden: ${producto1}</li>
+            <li>Precio: ${precio1}</li>
+            <li>Orden: ${producto1}</li>
+            <li>Precio: ${precio2}</li>
+            <li>Total: ${total(precio1,precio2)}</li>
+        </ul>
+        `;
+function total(precio1, precio2){
+    return precio1 + precio2;
+}        
+document.getElementById('app').innerHTML = html;
+
+//Arrays
