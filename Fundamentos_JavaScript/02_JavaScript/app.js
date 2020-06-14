@@ -401,3 +401,365 @@ function total(precio1, precio2){
 document.getElementById('app').innerHTML = html;
 
 //Arrays
+const numeros = [10,20,30,40,50,60]
+console.log(numeros);
+
+const meses = new Array('Enero', 'Febrero', 'Marzo', 'Abril')
+console.log(meses);
+
+const mezclado = ['Hola', 20, true, null, false, undefined];
+console.log(mezclado);
+
+console.log(meses.length)
+console.log(Array.isArray(meses));
+console.log(Array.isArray(nombre));
+
+console.log(meses);
+console.log(meses[1]);
+
+console.log(meses[4]);
+meses[4]= 'Mayo';
+console.log(meses[4]);
+
+meses.push('Junio');
+console.log(meses[5]);
+
+//Encontrar un elemento en el arreglo
+
+console.log(meses.indexOf('Abril'));
+
+meses.unshift('Mes 0');
+console.log(meses);
+
+meses.pop();
+console.log(meses);
+
+meses.shift();
+console.log(meses);
+
+meses.splice(2,2);
+console.log(meses);
+
+meses.reverse();
+console.log(meses);
+
+let arreglo1 = [1,2,3],
+    arreglo2 = [4,5,6];
+
+console.log(arreglo1.concat(arreglo2));
+
+const frutas = ['Platano', 'Manzana', 'Fresa', 'Naranja', 'Zanahoria'];
+console.log(frutas.sort());
+
+arreglo1 = [3, 10 ,9,5,1,8];
+console.log(arreglo1);
+
+console.log(arreglo1.sort());
+
+//Ordenar Numeros en Arreglos
+console.log(arreglo1.sort(function(x,y){
+    return x - y;
+}));
+
+//Ordenar Numeros en Arreglos Descendente
+console.log(arreglo1.sort(function(x,y){
+    return y - x;
+}));
+
+
+//Objetos en JavaScript
+
+const persona = {
+    nombre: 'Miguel',
+    apellido: 'Martinez',
+    profesion: 'Diseñador Grafico',
+    email: 'correo@dominio.com',
+    edad: 31,
+    musica: ['Trance', 'Rock', 'Otra'],
+    hogar: {
+        ciudad: 'CDMX',
+        pais: 'Mexico'
+    },
+    nacimiento: function() {
+        return new Date().getUTCFullYear() - this.edad;
+    }
+};
+
+console.log(persona);
+
+console.log(persona.nombre);
+
+console.log(persona.edad);
+
+console.log(persona.musica);
+
+persona.musica.push('Alternativo');
+
+console.log(persona.musica);
+
+console.log(persona.hogar.pais);
+
+console.log(persona.nacimiento());
+
+
+//Arreglo de Objetos
+
+const autos = [
+    {modelo: 'Mustang', motor: 6.2},
+    {modelo: 'Camaro', motor: 6.1},
+    {modelo: 'Challenger', motor: 6.3},
+];
+
+console.log(autos);
+
+console.log(autos[0].modelo);
+
+for(let i = 0; i < autos.length; i++){
+    console.log(autos[i].modelo);
+};
+
+
+//Funciones
+//Function Declaratios
+function saludar(nombre) {
+    console.log(`Hola ${nombre}`);
+};
+
+saludar('Bro');
+saludar('Alma');
+
+function sumar(a,b) {
+    console.log(a+b);
+};
+sumar(1,2);
+
+function saludar2(nombre = 'Visitante') {
+    return `Hola ${nombre}`
+}
+
+let saludo;
+
+saludo = saludar2('Mike');
+console.log(saludo);
+
+saludo = saludar2();
+console.log(saludo);
+
+//Funciones IIFE
+
+(function (tecnologia) {
+    console.log(`Aprendiendo ${tecnologia}`);
+})('JavaScript');
+
+//Metodos de Propiedad
+//Cuando una funcion se pone dentro de un objeto
+
+const musica ={
+    reproducir: function (id) {
+        console.log(`Reproduciendo Cancion id ${30}`);
+    },
+    pausar: function () {
+        console.log(`Música Pausada`);
+    }
+};
+
+musica.reproducir(30);
+
+musica.pausar();
+
+
+//Manejando Errores con Try Catch
+function obtenerClientes() {
+    console.log('Descargando...')
+
+    setTimeout(function(params) {
+        console.log('Completo')
+    }, 3000);
+}
+
+try {
+    algo();
+} catch (error) {
+    console.log(error);
+}finally{
+    console.log('No evalua nada, siempre se ejecuta')
+}
+
+//En JavaScript existe un objeto llamado Date
+
+//Fecha en especifico mes, dia, año
+let navidad2017 = new Date('12-25-2017');
+console.log(navidad2017);
+
+const diaHoy = new Date();
+console.log(diaHoy);
+
+valor = diaHoy.getMonth();
+console.log(valor);
+
+valor = diaHoy.getDay();
+console.log(valor);
+
+valor = diaHoy.getFullYear();
+console.log(valor);
+
+valor = diaHoy.getMinutes();
+console.log(valor);
+
+valor = diaHoy.getHours();
+console.log(valor);
+
+valor = diaHoy.getTime();
+console.log(valor);
+
+valor = diaHoy.getFullYear();
+console.log(valor);
+valor = diaHoy.setFullYear(2021);
+valor = diaHoy.getFullYear();
+console.log(valor);
+
+//Estructuras de control IF ELSE IFELSE
+let edad = 17;
+
+if(edad >= 18){
+    console.log('Si puedes entrar al sitio');
+}else{
+    console.log('No puedes entrar al sitio');
+}
+
+edad = 18;
+
+if(edad >= 18){
+    console.log('Si puedes entrar al sitio');
+}else{
+    console.log('No puedes entrar al sitio');
+}
+
+//Comprobar que una variable tiene valor
+let puntaje2;
+
+if(puntaje2){
+    console.log(`El puntaje fue de ${puntaje2}`)
+}else {
+    console.log(`No hay puntaje`)
+}
+
+let efectivo = 500, 
+    totalCarrito = 300;
+
+if(efectivo > totalCarrito){
+    console.log('Pago Correcto');
+} else {
+    console.log('Fondos insuficientes');
+}
+
+let hora = 20;
+
+if(hora >= 0 && hora <= 10){
+    console.log('Buenos dias!');
+} else if(hora > 10 && hora < 18 ){
+    console.log('Buenas tardes!');
+} else {
+    console.log('Buenas noches!');
+}
+
+hora = 9;
+if(hora >= 0 && hora <= 10){
+    console.log('Buenos dias!');
+} else if(hora > 10 && hora < 18 ){
+    console.log('Buenas tardes!');
+} else {
+    console.log('Buenas noches!');
+}
+
+hora = 12;
+if(hora >= 0 && hora <= 10){
+    console.log('Buenos dias!');
+} else if(hora > 10 && hora < 18 ){
+    console.log('Buenas tardes!');
+} else {
+    console.log('Buenas noches!');
+}
+
+let logueado = true;
+
+console.log( logueado=== true ? 'Si se logueo' : 'No se logeo' );
+
+logueado = false;
+console.log( logueado=== true ? 'Si se logueo' : 'No se logeo' );
+
+//Swith
+let medotoPago = 'efectivo';
+switch(medotoPago){
+    case 'efectivo':
+        console.log(`El usuario pago con ${medotoPago}`);
+        break;
+    case 'cheque':
+        console.log(`El usuario pago con ${medotoPago}`);
+        break;
+    case 'tarjeta':
+         console.log(`El usuario pago con ${medotoPago}`);
+         break;
+    default:
+        console.log('Metodo de pago no soportado');
+        break;
+}
+
+//Iteraciones
+
+for(let i = 0; i <= 6; i++){
+    if(i == 5){
+        console.log(`Voy en el ${i}`);
+        continue;
+    }
+    console.log(`Numero ${i}`);
+};
+
+let indice = 0;
+
+while(indice <= 5){
+    console.log(`Numero: ${indice}`);
+    indice++;
+}
+
+do{
+    console.log(`Numero: ${indice}`);
+    indice++;
+} while(indice < 2);
+
+const pendientes = ['Tareas', 'Comer', 'Proyecto', 'Aprender'];
+
+console.log(pendientes);
+
+for(i=0; i < pendientes.length; i++){
+    console.log(pendientes[i]);
+}
+console.log('__________');
+
+pendientes.forEach(function(pendiente, index) {
+    console.log(`${index}: ${pendiente}`)
+});
+
+const automovil = {
+    modelo: 'Camaro',
+    motor: 6.1,
+    anio: 1969,
+    marca: 'Chevrolet'
+}
+
+//Imprimir objeto con For
+for( let auto in automovil ){
+    console.log(`${auto} : ${automovil[auto]}`);
+};
+console.log(automovil);
+
+const   ciudades = ['Londres', 'New York', 'Madrid', 'Paris'],
+        ordenes = new Set([123,321,131,102]),
+        datos = new Map();
+
+datos.set('nombre', 'juan');
+datos.set('profesion', 'desarrollador web');
+
+console.log(ciudades);
+console.log(ordenes);
+console.log(datos);
