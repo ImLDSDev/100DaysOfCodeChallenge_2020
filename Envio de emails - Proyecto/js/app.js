@@ -3,7 +3,9 @@ const   email   = document.getElementById('email'),
         asunto  = document.getElementById('asunto'),
         mensaje = document.getElementById('mensaje');
 
-const   btnEnviar = document.getElementById('enviar');
+const   btnEnviar = document.getElementById('enviar'),
+        btnReset  = document.getElementById('resetBtn'),
+        formularioEnviar = document.getElementById('enviar-mail');
 
 //Event Listener
 eventListeners();
@@ -18,7 +20,10 @@ function eventListeners() {
     mensaje.addEventListener('blur', validarCampo);
 
     //boton enviar en el submit
-    btnEnviar.addEventListener('submit', enviarEmail);
+    formularioEnviar.addEventListener('submit', enviarEmail);
+
+    //boton reset
+    btnReset.addEventListener('click', resetFormulario);
 }
 
 //Funciones
@@ -47,14 +52,35 @@ function validarCampo() {
         }
 }
 
+//Resetear formulario
+function resetFormulario(e) {
+    formularioEnviar.reset();
+    e.preventDefault()
+}
+
 //Cuando se envia el correo
 function enviarEmail(e) {
-
+    //Spinner al presionar enviar
     const spinnerGif = document.querySelector('#spinner');
     spinnerGif.style.display = 'block';
 
-    
-    e.preventDefaul();
+    //Gif que confirma envio de email
+    const enviado = document.createElement('img');
+    enviado.src = 'img/mail.gif';
+    enviado.style.display = 'block';
+
+    //
+    setTimeout(function () {
+        spinnerGif.style.display = 'none';
+        document.querySelector('#loaders').appendChild( enviado );
+
+        setTimeout(function() {
+            enviado.remove();
+            formularioEnviar.reset();
+        }, 5000);
+    }, 3000);
+
+    e.preventDefault();
 }
 
 function validarLongitud(campo) {
