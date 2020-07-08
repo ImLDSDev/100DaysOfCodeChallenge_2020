@@ -11,6 +11,23 @@ function Interfaz() {
 
 }
 
+//Mensaje que se imprime en el HTML
+Interfaz.prototype.mostrarError = function(mensaje, tipo) {
+    const div = document.createElement('div');
+    if(tipo === 'error') {
+        div.classList.add('mensaje','error');
+    } else {
+        div.classList.add('mensaje','correcto');
+    }
+
+    div.innerHTML = `${mensaje}`;
+    formulario.insertBefore(div, document.querySelector('.form-group'));
+
+    setTimeout(function() {
+        document.querySelector('.mensaje').remove();
+    }, 3000)
+}
+
 //Event Listener
 const formulario = document.getElementById('cotizar-seguro');
 
@@ -37,7 +54,10 @@ formulario.addEventListener('submit', function(e) {
     //
     if(marcaSeleccionada === '' || anioSeleccioando === '' || tipo === '')
     {
-        console.log()
+        interfaz.mostrarError('Faltan Datos, revisa el formulario y prueba de nuevo', 'error');
+        
+    } else {
+        interfaz.mostrarError('Todo Correcto');
     }
 
 });
