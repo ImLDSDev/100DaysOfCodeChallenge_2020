@@ -65,6 +65,15 @@ Interfaz.prototype.mostrarError = function(mensaje, tipo) {
     }, 3000)
 }
 
+
+// Imprime el resultado de la cotizacion
+
+Interfaz.prototype.mostrarResultado = function(seguro, total) {
+    const resultado = document.getElementById('resultado');
+
+    
+}
+
 //Event Listener
 const formulario = document.getElementById('cotizar-seguro');
 
@@ -97,7 +106,9 @@ formulario.addEventListener('submit', function(e) {
         const seguro = new Seguro(marcaSeleccionada, anioSeleccioando, tipo);
 
         //Cotizar el seguro
-        const cantidad = seguro.cotizarSeguro(seguro);
+        const cantidad = seguro.cotizarSeguro();
+
+        interfaz.mostrarResultado(seguro, cantidad);
     }
 
 });
