@@ -70,8 +70,29 @@ Interfaz.prototype.mostrarError = function(mensaje, tipo) {
 
 Interfaz.prototype.mostrarResultado = function(seguro, total) {
     const resultado = document.getElementById('resultado');
+    let marca;
 
-    
+    switch(seguro.marca) {
+        case '1':
+            marca = 'Americano';
+            break;
+        case '2':
+            marca = 'Asiatico';
+            break;
+        case '3':
+            marca = 'Europeo';
+            break;
+    }
+    // Crear Div
+    const div = document.createElement('div');
+    div.innerHTML = `
+        Tu Resumen:
+        Marca:  ${marca}
+        Año:    ${seguro.anio}
+        Tipo:   ${seguro.tipo}
+        Total:  $ ${total}
+    `;
+    resultado.appendChild(div);
 }
 
 //Event Listener
